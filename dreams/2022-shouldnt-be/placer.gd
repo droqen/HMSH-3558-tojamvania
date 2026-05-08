@@ -5,6 +5,13 @@ enum { LANDEDGREYBUF }
 var airjumps := 0
 var sneaking := false
 
+func _ready() -> void:
+	super._ready()
+	bufs.setup_bufons([
+		FLORBUF,8,
+		LANDEDGREYBUF,15,
+	])
+
 func _physics_process(_delta: float) -> void:
 	var dpad := Pin.get_dpad()
 	var onflor := is_on_floor()

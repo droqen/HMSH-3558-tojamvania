@@ -36,7 +36,7 @@ navigation_enabled = false
 script = ExtResource("2_v56kj")
 
 [node name="placer" type="Node2D" parent="game/stage" unique_id=2132647450]
-position = Vector2(50, 50)
+position = Vector2(47, 66)
 script = ExtResource("4_fn0h5")
 metadata/_custom_type_script = "uid://crerl807nynkw"
 
@@ -44,10 +44,10 @@ metadata/_custom_type_script = "uid://crerl807nynkw"
 texture = ExtResource("5_ret7v")
 hframes = 10
 vframes = 10
-frame = 10
+frame = 15
 script = ExtResource("3_alh1m")
 sheet = ExtResource("4_o5566")
-frames = PackedInt32Array(10, 11)
+frames = PackedInt32Array(15)
 ani_period = 10
 
 [node name="mover" type="Node2D" parent="game/stage/placer" unique_id=1784391361]
