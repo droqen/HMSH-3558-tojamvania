@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NavdiDream" format=3 uid="uid://6cr5ww2q70e2"]
+
+[ext_resource type="PackedScene" uid="uid://b7bd2iwf1yx7w" path="res://dreams/2022-shouldnt-be/2022-shouldnt-be_scene.tscn" id="1_2y86v"]
+[ext_resource type="Script" uid="uid://dmknyp6uhnvkf" path="res://navdi/navdidream.gd" id="2_u4bmv"]
+
+[resource]
+script = ExtResource("2_u4bmv")
+packed_scene = ExtResource("1_2y86v")
