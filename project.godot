@@ -11,8 +11,21 @@ config_version=5
 [application]
 
 config/name="not-a-vania(HMSH)"
+run/main_scene="uid://b5y5u30rccpf6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Beeper="*uid://c2yvtniw1b2pr"
+Viewer="*uid://bfy80ijyf5q36"
+Dreamer="*uid://ophjb8jpxt5b"
+Pin="*uid://xrpfrgbeoidf"
+Dropper="*uid://b7mdiuqsbrppa"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/navdi_dreamweaver/plugin.cfg", "res://addons/pyxel_import/plugin.cfg")
 
 [physics]
 
