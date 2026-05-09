@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vx3uwrubfjuy"]
 
 [ext_resource type="Script" uid="uid://bi3oo5ma8rr87" path="res://dreams/06-brightgreenmenu/menu.gd" id="2_il7p1"]
+[ext_resource type="Script" uid="uid://c8r0rraf7yqst" path="res://navdi/navdisoleplayer.gd" id="3_3o2o3"]
 [ext_resource type="Script" uid="uid://bluc574m7qci" path="res://navdi/navdiviewrect.gd" id="5_21mrn"]
 
 [node name="06-brightgreenmenu" type="Node2D" unique_id=1473442127]
@@ -29,3 +30,7 @@ text = "test
 test"
 fit_content = true
 script = ExtResource("2_il7p1")
+
+[node name="Replacement Player" type="Node2D" parent="." unique_id=1023767086]
+script = ExtResource("3_3o2o3")
+metadata/_custom_type_script = "uid://c8r0rraf7yqst"

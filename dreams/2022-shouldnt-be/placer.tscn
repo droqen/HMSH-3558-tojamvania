@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dplvfribmtbwc"]
+
+[ext_resource type="Script" uid="uid://ba43ysi5qkpep" path="res://dreams/2022-shouldnt-be/placer.gd" id="1_mip6u"]
+[ext_resource type="Texture2D" uid="uid://gb7ahuwosw04" path="res://dreams/2022-shouldnt-be/not-here.pyxel" id="2_5got5"]
+[ext_resource type="Script" uid="uid://di2t14yakk4ot" path="res://navdi/navdisheetsprite.gd" id="3_ei07r"]
+[ext_resource type="Resource" uid="uid://cpb3lc6xrp267" path="res://dreams/2022-shouldnt-be/not-here_sheet.tres" id="4_sd444"]
+[ext_resource type="Script" uid="uid://tt1ag5ksilr0" path="res://navdi/navdibodymover.gd" id="5_5cfev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lucqv"]
+size = Vector2(5.9, 3.9)
+
+[node name="placer" type="Node2D" unique_id=898140446]
+z_index = 1
+script = ExtResource("1_mip6u")
+metadata/_custom_type_script = "uid://crerl807nynkw"
+
+[node name="spr" type="Sprite2D" parent="." unique_id=1168069434]
+texture = ExtResource("2_5got5")
+hframes = 10
+vframes = 10
+frame = 15
+script = ExtResource("3_ei07r")
+sheet = ExtResource("4_sd444")
+frames = PackedInt32Array(15)
+ani_period = 10
+
+[node name="mover" type="Node2D" parent="." unique_id=733532903]
+position = Vector2(0, 2)
+script = ExtResource("5_5cfev")
+metadata/_custom_type_script = "uid://tt1ag5ksilr0"
+
+[node name="solidcast" type="ShapeCast2D" parent="mover" unique_id=264275792]
+enabled = false
+shape = SubResource("RectangleShape2D_lucqv")
+target_position = Vector2(0, 0)

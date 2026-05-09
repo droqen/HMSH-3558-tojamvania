@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://c7ujvkr31w54l"]
+
+[ext_resource type="FontVariation" uid="uid://belrgyhj2bpcw" path="res://fonts/88_shortvariation.tres" id="1_81fli"]
+
+[sub_resource type="FontVariation" id="FontVariation_8ao53"]
+base_font = ExtResource("1_81fli")
+spacing_top = -3
+
+[resource]
+line_spacing = 0.0
+font = SubResource("FontVariation_8ao53")

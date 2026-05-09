@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ely4x6g6kqfh"]
+
+[ext_resource type="Script" uid="uid://c3kusorvta88f" path="res://dreams/2019-there-was-none/2019_there_was_none_scene.gd" id="1_se6k8"]
+[ext_resource type="PackedScene" uid="uid://b3k3ryrbbmfka" path="res://dreams/2022-shouldnt-be/default-view.tscn" id="1_tqelh"]
+[ext_resource type="Resource" uid="uid://cb03hh03r72py" path="res://dreams/2012-not-ending(yet)/2012-not-ending(yet)_Dream.tres" id="2_0qker"]
+[ext_resource type="LabelSettings" uid="uid://binod60l8i2ni" path="res://fonts/label44mono.tres" id="2_sv010"]
+[ext_resource type="PackedScene" uid="uid://dplvfribmtbwc" path="res://dreams/2022-shouldnt-be/placer.tscn" id="3_sv010"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sv010"]
+
+[node name="2019ThereWasNoneScene" type="Node2D" unique_id=710633843]
+script = ExtResource("1_se6k8")
+next_dream = ExtResource("2_0qker")
+
+[node name="View" parent="." unique_id=1713809483 instance=ExtResource("1_tqelh")]
+
+[node name="Label" type="Label" parent="." unique_id=173557458]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "PLACER!"
+label_settings = ExtResource("2_sv010")
+
+[node name="placer" parent="." unique_id=898140446 instance=ExtResource("3_sv010")]
+position = Vector2(277, 156)
+
+[node name="wall" type="StaticBody2D" parent="." unique_id=1300585132]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=23808300]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_sv010")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall" unique_id=1911858548]
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_sv010")
+
+[node name="wall2" type="StaticBody2D" parent="." unique_id=120230901]
+position = Vector2(300, 160)
+rotation = 3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" unique_id=1458727683]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_sv010")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall2" unique_id=305638754]
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_sv010")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=159518280]
+offset_left = 280.0
+offset_top = 140.0
+offset_right = 290.0
+offset_bottom = 150.0

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b3k3ryrbbmfka"]
+
+[ext_resource type="Script" uid="uid://bluc574m7qci" path="res://navdi/navdiviewrect.gd" id="1_o5k75"]
+
+[node name="View" type="ReferenceRect" unique_id=1713809483]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 301.0
+offset_bottom = 161.0
+script = ExtResource("1_o5k75")

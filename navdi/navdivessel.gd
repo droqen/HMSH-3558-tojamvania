@@ -26,14 +26,19 @@ func add_exile(x:Node) -> void:
 			else:
 				push_warning("Can't exile multiple mazes! Skipping maze %s" % x.name)
 		elif x is Node2D:
-			@warning_ignore("integer_division")
-			var roomcoords : Vector2i = (x as Node2D).position as Vector2i / vessel_room_size
+			var roomcoords : Vector2i = Vector2i(
+				floor((x as Node2D).position.x / vessel_room_size.x),
+				floor((x as Node2D).position.y / vessel_room_size.y),
+			)
 			var a : Array = exiles_by_roomcoords.get(roomcoords, []) as Array
 			a.append(x)
+			print("exile ",x," w position ",x.position," roomcoords ",roomcoords)
 			exiles_by_roomcoords.set(roomcoords, a)
 		elif x is Control:
-			@warning_ignore("integer_division")
-			var roomcoords : Vector2i = (x as Control).position as Vector2i / vessel_room_size
+			var roomcoords : Vector2i = Vector2i(
+				floor((x as Control).position.x / vessel_room_size.x),
+				floor((x as Control).position.y / vessel_room_size.y),
+			)
 			var a : Array = exiles_by_roomcoords.get(roomcoords, []) as Array
 			a.append(x)
 			exiles_by_roomcoords.set(roomcoords, a)

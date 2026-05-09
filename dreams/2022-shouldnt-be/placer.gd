@@ -21,7 +21,7 @@ func _physics_process(_delta: float) -> void:
 		sneaking = dpad.y > 0
 		if sneaking: airjumps = 0
 	elif sneaking:
-		if vy >= 0: vx = 0
+		#if vy >= 0: vx = 0
 		sneaking = false
 	
 	if Pin.get_jump_hit(): bufs.on(JUMPBUF)
@@ -33,16 +33,15 @@ func _physics_process(_delta: float) -> void:
 	else:
 		tow_vx(dpad.x, 0.65, 0.05)
 	
-	tow_gravity(1.0,0.015,Pin.get_jump_held(),0.040)
+	#tow_gravity(1.0,0.030)
+	tow_gravity(1.0,0.018,Pin.get_jump_held(),0.028)
+	#tow_gravity(1.0,0.015,Pin.get_jump_held(),0.040)
 
-	if bufs.has(LANDEDGREYBUF):
-		pass
-	else:
-		apply_velocities()
+	apply_velocities()
 	
 	if bufs.has(LANDEDGREYBUF):
 		spr.setup([39],0)
-		vx = 0; vy = 0;
+		#vx = 0; vy = 0;
 		bufs.on(LANDBUF)
 	elif bufs.has(LANDBUF):
 		spr.setup([39 if sneaking else 19],0)

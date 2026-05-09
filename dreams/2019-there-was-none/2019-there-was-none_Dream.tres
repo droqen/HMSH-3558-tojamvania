@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NavdiDream" format=3 uid="uid://b5kbhejkcqi33"]
+
+[ext_resource type="PackedScene" uid="uid://ely4x6g6kqfh" path="res://dreams/2019-there-was-none/2019-there-was-none_scene.tscn" id="1_b2bl1"]
+[ext_resource type="Script" uid="uid://dmknyp6uhnvkf" path="res://navdi/navdidream.gd" id="1_jpibs"]
+
+[resource]
+script = ExtResource("1_jpibs")
+packed_scene = ExtResource("1_b2bl1")
+metadata/_custom_type_script = "uid://dmknyp6uhnvkf"

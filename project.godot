@@ -22,6 +22,12 @@ Viewer="*uid://bfy80ijyf5q36"
 Dreamer="*uid://ophjb8jpxt5b"
 Pin="*uid://xrpfrgbeoidf"
 Dropper="*uid://b7mdiuqsbrppa"
+PlayerHolder="*uid://byindxb4eq4j4"
+
+[display]
+
+window/size/viewport_width=2000
+window/size/viewport_height=1000
 
 [editor_plugins]
 
