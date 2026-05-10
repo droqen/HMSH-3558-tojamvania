@@ -45,6 +45,7 @@ func _physics_process(_delta: float) -> void:
 				if tofull > 0:
 					lit_placer.visible = randf() < 0.5
 					if randf() < 0.1:
+						Beeper.get_sfx("type").play()
 						$stage/speakingLine.visible_characters += randi_range(
 							1,
 							mini(tofull,4)
@@ -54,10 +55,12 @@ func _physics_process(_delta: float) -> void:
 			else:
 				lit_placer.hide()
 				if $stage/speakingLine.visible_characters > 0:
+					Beeper.get_sfx("bksp").play()
 					$stage/speakingLine.visible_characters -= 1
 		else:
 			#lit_placer.hide()
 			if $stage/speakingLine.visible_characters > 0:
+				Beeper.get_sfx("bksp").play()
 				$stage/speakingLine.visible_characters -= 1
 		
 func loadroom() -> void:

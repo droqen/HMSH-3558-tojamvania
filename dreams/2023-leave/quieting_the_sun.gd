@@ -54,7 +54,9 @@ func _physics_process(_delta: float) -> void:
 		if prog < 340: $credits_wht.visible = randf() < 0.8
 		else: $credits_wht.show()
 	if prog >= 180:
-		if Pin.get_action_hit(): play = 1
+		if Pin.get_action_hit() and play == 0:
+			play = 1
+			Beeper.get_sfx("startsound").play()
 		if play:
 			play += 1
 			$slab3.visible = play % 10 < 5

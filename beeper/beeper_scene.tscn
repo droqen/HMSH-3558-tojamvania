@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://v46msmleojrr" path="res://beeper/JamBeeper.gd" id="1_vcynw"]
 [ext_resource type="AudioStream" uid="uid://vpkr5xgatqq5" path="res://beeper/Droqen-Drums-1.mp3" id="2_epntd"]
 [ext_resource type="AudioStream" uid="uid://bwh4dnjgd2dnl" path="res://beeper/Droqen-1st-melody-no-drums_Master-St.mp3" id="4_antat"]
-[ext_resource type="AudioStream" uid="uid://tg88h388ybf3" path="res://beeper/Droqen-Sun-1.mp3" id="4_om6po"]
 [ext_resource type="AudioStream" uid="uid://bi714cmohq1lw" path="res://beeper/Droqen-2nd-melody-no-drums_Master-St.mp3" id="5_8e160"]
 [ext_resource type="AudioStream" uid="uid://2uofggvegtr1" path="res://beeper/high_pitch.mp3" id="5_w3rm4"]
 [ext_resource type="Script" uid="uid://b42f75o2mfntd" path="res://beeper/custom_loop_player.gd" id="6_2ipsu"]
@@ -21,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://x5vdano5mqex" path="res://beeper/flap3.mp3" id="15_vxajl"]
 [ext_resource type="AudioStream" uid="uid://b57vos4e7yyl8" path="res://beeper/clicktyp.mp3" id="16_7scr0"]
 [ext_resource type="AudioStream" uid="uid://bdlh5rtd61x0l" path="res://beeper/bksp.mp3" id="17_antat"]
+[ext_resource type="AudioStream" uid="uid://day3h8svk1rgn" path="res://beeper/startchord.mp3" id="21_cxq1c"]
 
 [node name="BeeperScene" type="Node2D" unique_id=250030564]
 script = ExtResource("1_vcynw")
@@ -46,12 +46,6 @@ custom_loop_end_reduce = 0.046
 [node name="pitch" type="AudioStreamPlayer" parent="." unique_id=1922215176]
 stream = ExtResource("5_w3rm4")
 script = ExtResource("6_2ipsu")
-
-[node name="sun" type="AudioStreamPlayer" parent="." unique_id=1503888623]
-stream = ExtResource("4_om6po")
-script = ExtResource("6_2ipsu")
-custom_loop_start_late = 1.639
-custom_loop_end_reduce = 2.488
 
 [node name="library" type="AudioStreamPlayer" parent="." unique_id=758628342]
 stream = ExtResource("8_oy7qt")
@@ -132,3 +126,6 @@ volume_db = -4.0
 [node name="bksp" type="AudioStreamPlayer" parent="." unique_id=1521715246]
 stream = ExtResource("17_antat")
 volume_db = -4.0
+
+[node name="startsound" type="AudioStreamPlayer" parent="." unique_id=2018420801]
+stream = ExtResource("21_cxq1c")

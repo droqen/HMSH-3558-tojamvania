@@ -11,11 +11,14 @@ func _physics_process(_delta: float) -> void:
 	var e := Exit2026.GetExit(self)
 	if e:
 		if p and not p.visible:
+			#var sunconsfx := Beeper.get_sfx("connect")
+			#if not sunconsfx.playing or sunconsfx.get_playback_position() > 0.5:
+				#sunconsfx.play()
 			Beeper.plerp({
 				"melody2": -15,
 				"pitch": -10,
-				"drums": 0,
-			},1)
+				"drums": -10,
+			},0.1)
 		else:
 			if eduration < 100:
 				eduration += 1
@@ -28,6 +31,8 @@ func _physics_process(_delta: float) -> void:
 		var player_edge : float = 150
 		if get_coords().x == 2: player_edge = 0
 		var dist_to_edge : float = abs(p.position.x - player_edge)
+		if p.position.y > 46:
+			dist_to_edge = max(dist_to_edge,abs(p.position.y-46))
 		Beeper.plerp({
 			"drums": remap(dist_to_edge,150,0,0,-10),
 			"melody1": remap(dist_to_edge,80,0,-60,-10),
