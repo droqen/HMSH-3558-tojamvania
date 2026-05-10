@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cbbtf7quvr04j"]
+
+[ext_resource type="Script" uid="uid://v46msmleojrr" path="res://beeper/JamBeeper.gd" id="1_vcynw"]
+[ext_resource type="AudioStream" uid="uid://vpkr5xgatqq5" path="res://beeper/Droqen-Drums-1.mp3" id="2_epntd"]
+[ext_resource type="AudioStream" uid="uid://bk42ik6svcupj" path="res://beeper/Droqen-1st-melody-1.mp3" id="3_v2oqi"]
+[ext_resource type="AudioStream" uid="uid://tg88h388ybf3" path="res://beeper/Droqen-Sun-1.mp3" id="4_om6po"]
+[ext_resource type="AudioStream" uid="uid://bnmb8e3f4jrlf" path="res://beeper/Droqen-2nd-melody-1.mp3" id="4_y1r7b"]
+[ext_resource type="AudioStream" uid="uid://2uofggvegtr1" path="res://beeper/high_pitch.mp3" id="5_w3rm4"]
+[ext_resource type="Script" uid="uid://b42f75o2mfntd" path="res://beeper/custom_loop_player.gd" id="6_2ipsu"]
+
+[node name="BeeperScene" type="Node2D" unique_id=250030564]
+script = ExtResource("1_vcynw")
+
+[node name="drums" type="AudioStreamPlayer" parent="." unique_id=2061925558]
+stream = ExtResource("2_epntd")
+script = ExtResource("6_2ipsu")
+custom_loop_start_late = 0.027
+custom_loop_end_reduce = 0.046
+
+[node name="melody1" type="AudioStreamPlayer" parent="." unique_id=1953126615]
+stream = ExtResource("3_v2oqi")
+script = ExtResource("6_2ipsu")
+custom_loop_start_late = 0.027
+custom_loop_end_reduce = 0.046
+
+[node name="melody2" type="AudioStreamPlayer" parent="." unique_id=859582237]
+stream = ExtResource("4_y1r7b")
+script = ExtResource("6_2ipsu")
+custom_loop_start_late = 0.027
+custom_loop_end_reduce = 0.046
+
+[node name="pitch" type="AudioStreamPlayer" parent="." unique_id=1922215176]
+stream = ExtResource("5_w3rm4")
+script = ExtResource("6_2ipsu")
+
+[node name="sun" type="AudioStreamPlayer" parent="." unique_id=1503888623]
+stream = ExtResource("4_om6po")
+script = ExtResource("6_2ipsu")
+custom_loop_start_late = 1.639
+custom_loop_end_reduce = 2.488

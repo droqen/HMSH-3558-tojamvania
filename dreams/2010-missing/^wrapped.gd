@@ -1,0 +1,6 @@
+extends Node
+
+func _physics_process(_delta: float) -> void:
+	var p = get_parent()
+	print(p.position.x)
+	p.position.x = fposmod(p.position.x, 150)

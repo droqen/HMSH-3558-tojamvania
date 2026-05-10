@@ -5,19 +5,23 @@
 [ext_resource type="Resource" uid="uid://cb03hh03r72py" path="res://dreams/2012-not-ending(yet)/2012-not-ending(yet)_Dream.tres" id="2_0qker"]
 [ext_resource type="LabelSettings" uid="uid://binod60l8i2ni" path="res://fonts/label44mono.tres" id="2_sv010"]
 [ext_resource type="PackedScene" uid="uid://dplvfribmtbwc" path="res://dreams/2022-shouldnt-be/placer.tscn" id="3_sv010"]
+[ext_resource type="Script" uid="uid://deofnmer27xio" path="res://dreams/2019-there-was-none/exit.gd" id="6_dqprs"]
+[ext_resource type="Script" uid="uid://buyjmfhmbf20g" path="res://dreams/2019-there-was-none/beep.gd" id="6_kybtx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sv010"]
 
 [node name="2019ThereWasNoneScene" type="Node2D" unique_id=710633843]
 script = ExtResource("1_se6k8")
-next_dream = ExtResource("2_0qker")
 
 [node name="View" parent="." unique_id=1713809483 instance=ExtResource("1_tqelh")]
 
 [node name="Label" type="Label" parent="." unique_id=173557458]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "PLACER!"
+text = "PLACER!              
+
+ thi8s isn'g th0 9td 90f y6^br s711111y y59bk. y88a oub yus
+ o luiboul. eaerean gahtf orho ru11111"
 label_settings = ExtResource("2_sv010")
 
 [node name="placer" parent="." unique_id=898140446 instance=ExtResource("3_sv010")]
@@ -47,6 +51,15 @@ shape = SubResource("WorldBoundaryShape2D_sv010")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=159518280]
 offset_left = 280.0
-offset_top = 140.0
+offset_top = 150.0
 offset_right = 290.0
-offset_bottom = 150.0
+offset_bottom = 160.0
+
+[node name="Exit2026" type="Marker2D" parent="." unique_id=1592859997]
+position = Vector2(285, 155)
+script = ExtResource("6_dqprs")
+target_dream = ExtResource("2_0qker")
+metadata/_custom_type_script = "uid://deofnmer27xio"
+
+[node name="beep" type="Node" parent="." unique_id=1056664244]
+script = ExtResource("6_kybtx")

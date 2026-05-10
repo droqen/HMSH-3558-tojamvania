@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NavdiDream" format=3 uid="uid://b2bk3bn2a2xdq"]
+
+[ext_resource type="PackedScene" uid="uid://bjebctbvah57" path="res://dreams/2025-the-more-u-have/2025-the-more-u-have_scene.tscn" id="1_0rejc"]
+[ext_resource type="Script" uid="uid://dmknyp6uhnvkf" path="res://navdi/navdidream.gd" id="2_y84mu"]
+
+[resource]
+script = ExtResource("2_y84mu")
+packed_scene = ExtResource("1_0rejc")

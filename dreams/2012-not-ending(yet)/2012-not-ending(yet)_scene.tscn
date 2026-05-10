@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://cmcadvi8j44y0" path="res://navdi/navdivessel.gd" id="6_hmdn8"]
 [ext_resource type="PackedScene" uid="uid://b3k3ryrbbmfka" path="res://dreams/2022-shouldnt-be/default-view.tscn" id="6_l8is2"]
 [ext_resource type="LabelSettings" uid="uid://c7ujvkr31w54l" path="res://fonts/label88mono.tres" id="7_l8is2"]
+[ext_resource type="Script" uid="uid://deofnmer27xio" path="res://dreams/2019-there-was-none/exit.gd" id="8_71x05"]
+[ext_resource type="Script" uid="uid://bbipm02ofwkc7" path="res://dreams/2012-not-ending(yet)/2012_beep.gd" id="9_5wxgb"]
+[ext_resource type="Resource" uid="uid://b2bk3bn2a2xdq" path="res://dreams/2025-the-more-u-have/2025-the-more-u-have_Dream.tres" id="9_c4xjv"]
 
 [node name="2012-not-ending(yet)" type="Node2D" unique_id=206616425 node_paths=PackedStringArray("stage", "stage_exiles", "vessel")]
 texture_filter = 1
@@ -53,8 +56,23 @@ offset_left = -65.0
 offset_top = -65.0
 offset_right = 65.0
 offset_bottom = -25.0
-text = "climbing, but
-you know it's
-only delaying
-the fall,"
+text = "yyuja q w tuo
+rtu eveivel i
+glllelgb rbel
+meraekrooooab
+gggbhrobpnvtr
+urrlur. urrli
+lurbumlur. br
+lurbit. yyyyu
+yuj q geblll."
 label_settings = ExtResource("7_l8is2")
+
+[node name="Exit2026" type="Marker2D" parent="v" unique_id=218549060]
+position = Vector2(195, 95)
+script = ExtResource("8_71x05")
+target_dream = ExtResource("9_c4xjv")
+metadata/_custom_type_script = "uid://deofnmer27xio"
+
+[node name="2012beep" type="Node" parent="." unique_id=1987211637]
+process_mode = 3
+script = ExtResource("9_5wxgb")

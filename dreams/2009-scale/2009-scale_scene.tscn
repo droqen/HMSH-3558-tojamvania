@@ -9,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cmtee0uyirhi6" path="res://dreams/2009-scale/vista.pyxel" id="5_dctt7"]
 [ext_resource type="Script" uid="uid://bj1ojyq5dphgn" path="res://navdi/navdisheetregionsprite.gd" id="6_mmks6"]
 [ext_resource type="Script" uid="uid://tt1ag5ksilr0" path="res://navdi/navdibodymover.gd" id="8_7rh0o"]
+[ext_resource type="LabelSettings" uid="uid://c7ujvkr31w54l" path="res://fonts/label88mono.tres" id="10_dctt7"]
+[ext_resource type="LabelSettings" uid="uid://binod60l8i2ni" path="res://fonts/label44mono.tres" id="11_mmks6"]
+[ext_resource type="Script" uid="uid://ckemyrgrufk45" path="res://dreams/2009-scale/scalebeep.gd" id="12_bjmvp"]
+[ext_resource type="Script" uid="uid://deofnmer27xio" path="res://dreams/2019-there-was-none/exit.gd" id="13_2dakg"]
+[ext_resource type="Resource" uid="uid://6cr5ww2q70e2" path="res://dreams/2022-shouldnt-be/2022-shouldnt-be_Dream.tres" id="14_5onro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcscm"]
 size = Vector2(0.9, 0.9)
@@ -25,6 +30,52 @@ navigation_enabled = false
 script = ExtResource("2_kb54a")
 
 [node name="View2" parent="." unique_id=1713809483 instance=ExtResource("3_gy5oj")]
+
+[node name="Label" type="Label" parent="." unique_id=398089902]
+offset_right = 110.0
+offset_bottom = 23.0
+text = "2009: Scale"
+label_settings = ExtResource("10_dctt7")
+
+[node name="Label2" type="Label" parent="." unique_id=326146165]
+modulate = Color(0.27470893, 0.31096, 0.3024426, 1)
+offset_left = 155.0
+offset_right = 375.0
+offset_bottom = 65.0
+text = "
+
+ game by droqen
+in collaboration with
+
+  * remi who created
+     the sun music
+     and other sounds
+
+  * skbbyc who created
+     the library tileset,
+      blarmo,
+    and John Fitzwilliam Goat"
+label_settings = ExtResource("11_mmks6")
+
+[node name="Label3" type="Label" parent="." unique_id=384555339]
+offset_right = 220.0
+offset_bottom = 75.0
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+[HOLD RIGHT TO ENTER HOLE]"
+label_settings = ExtResource("11_mmks6")
 
 [node name="tiny" type="Node2D" parent="." unique_id=771099010]
 z_index = 1
@@ -50,3 +101,12 @@ metadata/_custom_type_script = "uid://tt1ag5ksilr0"
 enabled = false
 shape = SubResource("RectangleShape2D_dcscm")
 target_position = Vector2(0, 0)
+
+[node name="scalebeep" type="Node" parent="." unique_id=438307590]
+script = ExtResource("12_bjmvp")
+
+[node name="Exit2026" type="Marker2D" parent="." unique_id=1675161149]
+position = Vector2(88, 85)
+script = ExtResource("13_2dakg")
+target_dream = ExtResource("14_5onro")
+metadata/_custom_type_script = "uid://deofnmer27xio"

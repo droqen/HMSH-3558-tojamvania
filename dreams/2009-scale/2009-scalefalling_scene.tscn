@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://ck2w1yq7ry8sm"]
+
+[ext_resource type="PackedScene" uid="uid://b3k3ryrbbmfka" path="res://dreams/2022-shouldnt-be/default-view.tscn" id="4_weceu"]
+[ext_resource type="LabelSettings" uid="uid://c7ujvkr31w54l" path="res://fonts/label88mono.tres" id="5_xtwvo"]
+[ext_resource type="LabelSettings" uid="uid://binod60l8i2ni" path="res://fonts/label44mono.tres" id="6_ii0ns"]
+[ext_resource type="Script" uid="uid://1c5o3x5ory3s" path="res://dreams/2009-scale/tinyplacer.gd" id="7_vrpyo"]
+[ext_resource type="Texture2D" uid="uid://cmtee0uyirhi6" path="res://dreams/2009-scale/vista.pyxel" id="8_7h7lg"]
+[ext_resource type="Script" uid="uid://bj1ojyq5dphgn" path="res://navdi/navdisheetregionsprite.gd" id="9_laun2"]
+[ext_resource type="Script" uid="uid://jnf3olxwibwu" path="res://dreams/2009-scale/leaving.gd" id="9_vaboq"]
+[ext_resource type="Resource" uid="uid://cbl13xho4v3xx" path="res://dreams/2010-missing/2010-missing_Dream.tres" id="10_erxnd"]
+[ext_resource type="Resource" uid="uid://cyswka4cva3w2" path="res://dreams/2009-scale/vista_sheet.tres" id="10_pk773"]
+[ext_resource type="Script" uid="uid://tt1ag5ksilr0" path="res://navdi/navdibodymover.gd" id="11_7ncew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcscm"]
+size = Vector2(0.9, 0.9)
+
+[node name="2009-scale" type="Node2D" unique_id=1774818909]
+texture_filter = 1
+
+[node name="View2" parent="." unique_id=1713809483 instance=ExtResource("4_weceu")]
+
+[node name="Label" type="Label" parent="." unique_id=398089902]
+visible = false
+offset_right = 110.0
+offset_bottom = 23.0
+text = "2009: Scale"
+label_settings = ExtResource("5_xtwvo")
+
+[node name="Label2" type="Label" parent="." unique_id=326146165]
+visible = false
+modulate = Color(0.27470893, 0.31096, 0.3024426, 1)
+offset_left = 155.0
+offset_right = 375.0
+offset_bottom = 65.0
+text = "
+
+ game by droqen
+in collaboration with
+
+  * remi who created
+     the sun music
+     and other sounds
+
+  * skbbyc who created
+     the library tileset,
+      blarmo,
+    and John Fitzwilliam Goat"
+label_settings = ExtResource("6_ii0ns")
+
+[node name="Label3" type="Label" parent="." unique_id=384555339]
+visible = false
+offset_right = 220.0
+offset_bottom = 75.0
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+[HOLD RIGHT TO ENTER HOLE]"
+label_settings = ExtResource("6_ii0ns")
+
+[node name="tiny" type="Node2D" parent="." unique_id=771099010]
+z_index = 1
+position = Vector2(150, -4)
+script = ExtResource("7_vrpyo")
+metadata/_custom_type_script = "uid://crerl807nynkw"
+
+[node name="spr" type="Sprite2D" parent="tiny" unique_id=931491466]
+texture = ExtResource("8_7h7lg")
+region_enabled = true
+region_rect = Rect2(0, 10, 5, 5)
+script = ExtResource("9_laun2")
+sheet = ExtResource("10_pk773")
+frames = PackedInt32Array(10, 11)
+metadata/_custom_type_script = "uid://bj1ojyq5dphgn"
+
+[node name="mover" type="Node2D" parent="tiny" unique_id=1623058287]
+position = Vector2(0, 2)
+script = ExtResource("11_7ncew")
+metadata/_custom_type_script = "uid://tt1ag5ksilr0"
+
+[node name="solidcast" type="ShapeCast2D" parent="tiny/mover" unique_id=1827414398]
+enabled = false
+shape = SubResource("RectangleShape2D_dcscm")
+target_position = Vector2(0, 0)
+
+[node name="leaving" type="Node2D" parent="." unique_id=445345774]
+script = ExtResource("9_vaboq")
+targetdream = ExtResource("10_erxnd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1297959362]
+offset_left = -1.0
+offset_top = 158.0
+offset_right = 301.0
+offset_bottom = 159.0
+color = Color(0.15686275, 0.2, 0.15686275, 1)

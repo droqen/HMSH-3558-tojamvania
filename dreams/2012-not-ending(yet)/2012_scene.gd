@@ -27,16 +27,23 @@ func _ready() -> void:
 	)
 	stage_maze = stage.get_node("Maze") as Maze
 	loadroom.call_deferred()
+var phlug : int = 0
 func _physics_process(_delta: float) -> void:
 	var p := NavdiSolePlayer.GetPlayer(self)
 	if p:
 		var traveldir := NavdiGenUtil.gen_oobdir(p.position, roomrect_pixels, -1)
 		if traveldir :
 			coords += traveldir
+			if traveldir.y < 0 and coords.y > 0: coords.y = 0
 			if coords.y > randi_range(3,4): coords.y = randi_range(1,3)
 			p.position.x -= traveldir.x * (roomrect_pixels.size.x - 4)
 			p.position.y -= traveldir.y * (roomrect_pixels.size.y - 4)
 			loadroom()
+	
+	if phlug > 0: phlug -= 1
+	elif randf() < 0.01: phlug = 10
+	
+	if phlug > 5: randomize_pinks()
 func loadroom() -> void:
 	stage_maze.copy_from(
 		vessel.get_maze(),
@@ -45,4 +52,9 @@ func loadroom() -> void:
 			roomrect_tiles.size,
 		),
 	)
+	randomize_pinks()
 	vessel.spawn_exiles_by_roomcoords(coords, stage_exiles)
+
+func randomize_pinks() -> void:
+	for pinkcell in stage_maze.get_used_cells_by_tids([0,10,20,30]):
+		stage_maze.set_cell_tid(pinkcell,[0,10,20,30][randi()%4])

@@ -17,12 +17,12 @@ config/icon="uid://veo7latmdhug"
 
 [autoload]
 
-Beeper="*uid://c2yvtniw1b2pr"
 Viewer="*uid://bfy80ijyf5q36"
 Dreamer="*uid://ophjb8jpxt5b"
 Pin="*uid://xrpfrgbeoidf"
 Dropper="*uid://b7mdiuqsbrppa"
 PlayerHolder="*uid://byindxb4eq4j4"
+Beeper="*uid://cbbtf7quvr04j"
 
 [display]
 

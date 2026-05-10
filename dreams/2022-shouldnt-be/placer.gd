@@ -2,6 +2,7 @@ extends NavdiSolePlayerBasics
 
 enum { LANDEDGREYBUF }
 
+@onready var staircast : ShapeCast2D = $mover/staircast
 var airjumps := 0
 var sneaking := false
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 	])
 
 func _physics_process(_delta: float) -> void:
+	show()
 	var dpad := Pin.get_dpad()
 	var onflor := is_on_floor()
 	if onflor:
@@ -36,7 +38,7 @@ func _physics_process(_delta: float) -> void:
 	#tow_gravity(1.0,0.030)
 	tow_gravity(1.0,0.018,Pin.get_jump_held(),0.028)
 	#tow_gravity(1.0,0.015,Pin.get_jump_held(),0.040)
-
+	
 	apply_velocities()
 	
 	if bufs.has(LANDEDGREYBUF):
@@ -74,3 +76,29 @@ func _physics_process(_delta: float) -> void:
 				vy = -.6
 			1:
 				vy = vy*.33 - 1.1
+
+func is_on_floor() -> bool:
+	var on_floor : bool = false
+	if vy >= 0:
+		var cast_to_floor := mover.cast_fraction(self, staircast, VERTICAL, 1)
+		if cast_to_floor < 1:
+			if cast_to_floor >= .25:
+				position.y += cast_to_floor
+			on_floor = true
+			if not bufs.has(FLORBUF) and not bufs.has(NOLANDBUF): bufs.on(LANDBUF)
+			bufs.on(FLORBUF)
+	return on_floor
+
+func apply_velocities() -> void:
+	if vy<0 and!mover.try_slip_move(self,solidcast,VERTICAL,vy,sign(vx)):
+		vy=0 # do vy first if moving up
+	if vx<0 and!mover.try_slip_move(self,solidcast,HORIZONTAL,vx,sign(vy)):
+		vx=0 # vx left: through stairs
+	if vx>0 and!mover.try_slip_move(self,staircast,HORIZONTAL,vx,sign(vy)):
+		if mover.try_slip_move(self,solidcast,HORIZONTAL,vx,sign(vy)):
+			position.y -= abs(vx)
+		else:
+			vx=0 # vx right: uppa da stairs
+		
+	if vy>0 and!mover.try_move(self,staircast,VERTICAL,vy):
+		vy=0 # do vy last if moving down - no slip

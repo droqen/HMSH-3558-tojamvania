@@ -33,3 +33,9 @@ metadata/_custom_type_script = "uid://tt1ag5ksilr0"
 enabled = false
 shape = SubResource("RectangleShape2D_lucqv")
 target_position = Vector2(0, 0)
+
+[node name="staircast" type="ShapeCast2D" parent="mover" unique_id=2123944345]
+enabled = false
+shape = SubResource("RectangleShape2D_lucqv")
+target_position = Vector2(0, 0)
+collision_mask = 3
