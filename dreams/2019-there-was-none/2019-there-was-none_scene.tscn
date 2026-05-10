@@ -20,8 +20,15 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "PLACER!              
 
- thi8s isn'g th0 9td 90f y6^br s711111y y59bk. y88a oub yus
- o luiboul. eaerean gahtf orho ru11111"
+ thase leobol, Attent i bo teobol
+     
+ era terraca i least matendre
+     
+ i most sauv0uria.
+     
+ placer, lememtarch, Attenta, peal rao i senec,
+     
+ amber."
 label_settings = ExtResource("2_sv010")
 
 [node name="placer" parent="." unique_id=898140446 instance=ExtResource("3_sv010")]
@@ -51,12 +58,12 @@ shape = SubResource("WorldBoundaryShape2D_sv010")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=159518280]
 offset_left = 280.0
-offset_top = 150.0
+offset_top = 140.0
 offset_right = 290.0
-offset_bottom = 160.0
+offset_bottom = 150.0
 
 [node name="Exit2026" type="Marker2D" parent="." unique_id=1592859997]
-position = Vector2(285, 155)
+position = Vector2(285, 145)
 script = ExtResource("6_dqprs")
 target_dream = ExtResource("2_0qker")
 metadata/_custom_type_script = "uid://deofnmer27xio"
