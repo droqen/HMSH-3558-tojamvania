@@ -1,6 +1,6 @@
 extends NavdiSolePlayerBasics
 
-enum { LANDEDGREYBUF }
+enum { LANDEDGREYBUF, FREEZEBUF, }
 
 @onready var staircast : ShapeCast2D = $mover/staircast
 var airjumps := 0
@@ -11,10 +11,13 @@ func _ready() -> void:
 	bufs.setup_bufons([
 		FLORBUF,8,
 		LANDEDGREYBUF,15,
+		FREEZEBUF,5,
 	])
 
 func _physics_process(_delta: float) -> void:
 	show()
+	if bufs.has(FREEZEBUF):
+		return # stay here
 	var dpad := Pin.get_dpad()
 	var onflor := is_on_floor()
 	if onflor:
@@ -105,3 +108,9 @@ func apply_velocities() -> void:
 		
 	if vy>0 and!mover.try_move(self,staircast,VERTICAL,vy):
 		vy=0 # do vy last if moving down - no slip
+
+func freeze(freezeframes:int=0) -> void:
+	if freezeframes:
+		bufs.setmin(FREEZEBUF,freezeframes)
+	else:
+		bufs.on(FREEZEBUF)

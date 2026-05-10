@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://bnmb8e3f4jrlf" path="res://beeper/Droqen-2nd-melody-1.mp3" id="4_y1r7b"]
 [ext_resource type="AudioStream" uid="uid://2uofggvegtr1" path="res://beeper/high_pitch.mp3" id="5_w3rm4"]
 [ext_resource type="Script" uid="uid://b42f75o2mfntd" path="res://beeper/custom_loop_player.gd" id="6_2ipsu"]
+[ext_resource type="AudioStream" uid="uid://bpcdm5alnrni7" path="res://beeper/Droqen-3rd-theme_Master-St_1.mp3" id="8_oy7qt"]
+[ext_resource type="AudioStream" uid="uid://bf6e77o31424f" path="res://beeper/536763__egomassive__glass.ogg" id="9_4bnn0"]
+[ext_resource type="AudioStream" uid="uid://dfdxyehapx4jm" path="res://beeper/764765__tean_brits29__glass-breaking.ogg" id="10_11ows"]
 
 [node name="BeeperScene" type="Node2D" unique_id=250030564]
 script = ExtResource("1_vcynw")
@@ -38,3 +41,16 @@ stream = ExtResource("4_om6po")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 1.639
 custom_loop_end_reduce = 2.488
+
+[node name="library" type="AudioStreamPlayer" parent="." unique_id=758628342]
+stream = ExtResource("8_oy7qt")
+script = ExtResource("6_2ipsu")
+custom_loop_start_late = 0.027
+custom_loop_end_reduce = 0.046
+
+[node name="break" type="AudioStreamPlayer" parent="." unique_id=364884055]
+stream = ExtResource("9_4bnn0")
+pitch_scale = 0.5
+
+[node name="break2" type="AudioStreamPlayer" parent="." unique_id=474474011]
+stream = ExtResource("10_11ows")

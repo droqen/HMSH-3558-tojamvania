@@ -9,12 +9,13 @@
 [ext_resource type="Script" uid="uid://jnf3olxwibwu" path="res://dreams/2009-scale/leaving.gd" id="9_vaboq"]
 [ext_resource type="Resource" uid="uid://cbl13xho4v3xx" path="res://dreams/2010-missing/2010-missing_Dream.tres" id="10_erxnd"]
 [ext_resource type="Resource" uid="uid://cyswka4cva3w2" path="res://dreams/2009-scale/vista_sheet.tres" id="10_pk773"]
+[ext_resource type="Script" uid="uid://fpc8dkif85t7" path="res://dreams/2009-scale/fallingmusic.gd" id="11_3k83s"]
 [ext_resource type="Script" uid="uid://tt1ag5ksilr0" path="res://navdi/navdibodymover.gd" id="11_7ncew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dcscm"]
 size = Vector2(0.9, 0.9)
 
-[node name="2009-scale" type="Node2D" unique_id=1774818909]
+[node name="2009-scale(falling)" type="Node2D" unique_id=1774818909]
 texture_filter = 1
 
 [node name="View2" parent="." unique_id=1713809483 instance=ExtResource("4_weceu")]
@@ -103,3 +104,6 @@ offset_top = 158.0
 offset_right = 301.0
 offset_bottom = 159.0
 color = Color(0.15686275, 0.2, 0.15686275, 1)
+
+[node name="fallingmusic" type="Node" parent="." unique_id=77874195]
+script = ExtResource("11_3k83s")

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c46rlki7f5gny" path="res://dreams/2010-missing/sun_center.gd" id="8_68pvq"]
 [ext_resource type="LabelSettings" uid="uid://c7ujvkr31w54l" path="res://fonts/label88mono.tres" id="9_h30ia"]
 [ext_resource type="Script" uid="uid://co8xi3qhbnxlt" path="res://dreams/2010-missing/how_to_leave.gd" id="11_guvh6"]
+[ext_resource type="Script" uid="uid://ds44mufxs44hq" path="res://dreams/2010-missing/missing_music.gd" id="12_outi0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pyq6s"]
 normal = Vector2(1, 0)
@@ -129,3 +130,6 @@ label_settings = ExtResource("9_h30ia")
 
 [node name="how-to-leave" type="Node" parent="." unique_id=166489721]
 script = ExtResource("11_guvh6")
+
+[node name="missing-music" type="Node" parent="." unique_id=1750447417]
+script = ExtResource("12_outi0")
