@@ -48,7 +48,9 @@ func _physics_process(_delta: float) -> void:
 	vx /= TINYSCALE
 	vy /= TINYSCALE
 	
-	position.x = clamp(position.x, -1, 299.5)
+	#position.x = clamp(position.x, -1, 299.5)
+	if position.x < -0.75 or position.x > 299.75:
+		Dreamer.dreamfresh(load("res://dreams/2023-leave/2023-leave_Dream.tres"))
 	
 	if bufs.has(LANDEDGREYBUF):
 		spr.setup([11],0)

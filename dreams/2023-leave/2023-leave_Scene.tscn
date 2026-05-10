@@ -3,21 +3,88 @@
 [ext_resource type="Script" uid="uid://ctmay1tyupgga" path="res://dreams/2023-leave/quieting_the_sun.gd" id="1_kgmwy"]
 [ext_resource type="LabelSettings" uid="uid://binod60l8i2ni" path="res://fonts/label44mono.tres" id="1_owej1"]
 [ext_resource type="PackedScene" uid="uid://b3k3ryrbbmfka" path="res://dreams/2022-shouldnt-be/default-view.tscn" id="2_kgmwy"]
+[ext_resource type="Script" uid="uid://c8r0rraf7yqst" path="res://navdi/navdisoleplayer.gd" id="4_uaaf7"]
 
 [node name="2023LeaveScene" type="Node2D" unique_id=970889184]
 script = ExtResource("1_kgmwy")
 
 [node name="Label" type="Label" parent="." unique_id=469862930]
+modulate = Color(0.3019608, 0.3019608, 0.3019608, 1)
+offset_left = 115.0
+offset_top = 65.0
+offset_right = 190.0
+offset_bottom = 95.0
+text = "     SCORE    
+
+HIGH SCORE    
+
+
+"
+label_settings = ExtResource("1_owej1")
+
+[node name="slab1" type="Label" parent="." unique_id=1615839982]
+visible = false
 offset_left = 115.0
 offset_top = 65.0
 offset_right = 190.0
 offset_bottom = 95.0
 text = "     SCORE    0
 
+
+
+
+"
+label_settings = ExtResource("1_owej1")
+
+[node name="ColorRect" type="ColorRect" parent="slab1" unique_id=164924083]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 75.0
+offset_bottom = 5.0
+
+[node name="slab2" type="Label" parent="." unique_id=10385345]
+visible = false
+offset_left = 115.0
+offset_top = 65.0
+offset_right = 190.0
+offset_bottom = 95.0
+text = "
+
 HIGH SCORE    0
+
+
+"
+label_settings = ExtResource("1_owej1")
+
+[node name="ColorRect" type="ColorRect" parent="slab2" unique_id=67806094]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 75.0
+offset_bottom = 15.0
+
+[node name="slab3" type="Label" parent="." unique_id=239482107]
+visible = false
+offset_left = 115.0
+offset_top = 65.0
+offset_right = 190.0
+offset_bottom = 95.0
+text = "
+
+
 
 
  [PLAY AGAIN?]"
 label_settings = ExtResource("1_owej1")
 
+[node name="ColorRect" type="ColorRect" parent="slab3" unique_id=1988291441]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 25.0
+offset_right = 65.0
+offset_bottom = 30.0
+
 [node name="View" parent="." unique_id=1713809483 instance=ExtResource("2_kgmwy")]
+
+[node name="nullplayer" type="Node2D" parent="." unique_id=1548008830]
+script = ExtResource("4_uaaf7")
+metadata/_custom_type_script = "uid://c8r0rraf7yqst"

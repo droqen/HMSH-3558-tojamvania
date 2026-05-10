@@ -10,5 +10,6 @@ func _physics_process(_delta: float) -> void:
 		fade_melody2 -= 0.01
 	Beeper.plerp({
 		"melody2": fade_melody2,
+		"drums": fade_melody2,
 		"pitch": fade_pitch,
 	})

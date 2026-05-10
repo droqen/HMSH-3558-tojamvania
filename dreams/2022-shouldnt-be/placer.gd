@@ -49,9 +49,9 @@ func _physics_process(_delta: float) -> void:
 	
 	#tow_gravity(1.0,0.030)
 	if airjumps == 0:
-		tow_gravity(1.0,0.016)
+		tow_gravity(1.5,0.016)
 	else:
-		tow_gravity(1.0,0.018,Pin.get_jump_held(),0.028)
+		tow_gravity(1.5,0.018,Pin.get_jump_held(),0.028)
 	#tow_gravity(1.0,0.015,Pin.get_jump_held(),0.040)
 	
 	apply_velocities()
