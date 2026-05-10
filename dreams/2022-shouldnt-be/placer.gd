@@ -70,7 +70,11 @@ func _physics_process(_delta: float) -> void:
 		elif airjumps >= 1:
 			spr.setup([26],0)
 		elif airjumps >= 0:
-			if vy > 0.5: spr.setup([28,29],5)
+			if vy > 0.5:
+				if abs(vx) < 0.3:
+					spr.setup([58,59],5)
+				else:
+					spr.setup([28,29],5)
 			elif abs(vx) >= 0.07: spr.setup([27],0)
 			else: spr.setup([28],0)
 	elif dpad.x:

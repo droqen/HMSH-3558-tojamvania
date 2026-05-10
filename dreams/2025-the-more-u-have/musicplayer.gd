@@ -2,16 +2,22 @@ extends Node
 
 const CustomLoopPlayer = preload("res://beeper/custom_loop_player.gd")
 
+var nomusic : bool = false
 var reverse : bool = false
 var reverse_point : float = 0.0
 var reverse_period : float = 0.0
 
 func _physics_process(_delta: float) -> void:
-	Beeper.plerp({
-		"library":-15
-	})
+	if nomusic:
+		Beeper.plerp({},1)
+	else:
+		Beeper.plerp({
+			"library":-15
+		})
 func _process(delta: float) -> void:
-	if reverse:
+	if nomusic:
+		pass
+	elif reverse:
 		reverse_period -= delta
 		if reverse_period < 0:
 			reverse_period += 0.2

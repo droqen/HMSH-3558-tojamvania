@@ -1,6 +1,7 @@
 extends Node2D
 @onready var maze : Maze = $"../Maze"
 @onready var v : NavdiVessel = $"../v"
+
 func _ready() -> void:
 	var p := NavdiSolePlayer.GetPlayer(self)
 	if p :
@@ -34,6 +35,7 @@ func _physics_process(_delta: float) -> void:
 					p.airjumps = 0
 					p.vx = 0
 					p.vy = 0
+					#$"../musicplayer".nomusic = true
 				else:
 					var breaksound := Beeper.get_sfx("break")
 					var pitch := breaksound.pitch_scale
