@@ -58,6 +58,7 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="v" type="Node2D" parent="game" unique_id=2029593319]
+visible = false
 script = ExtResource("9_x2d6g")
 vessel_room_size = Vector2i(150, 160)
 metadata/_custom_type_script = "uid://cmcadvi8j44y0"

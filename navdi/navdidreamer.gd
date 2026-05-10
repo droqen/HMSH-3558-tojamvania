@@ -1,6 +1,8 @@
 extends Node
 class_name NavdiDreamer
 
+@export var debug_mode : bool = true
+
 var dream_stack : Array[NavdiDream] = []
 var dream_depth : int = -1
 
@@ -213,5 +215,5 @@ class HandledNodeSpawn:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if (event as InputEventKey).keycode == KEY_ESCAPE:
-			if OS.has_feature("editor"):
+			if debug_mode:
 				wake()

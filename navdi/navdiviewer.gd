@@ -74,7 +74,7 @@ func calculate_fitscale(pondsize:Vector2,fishsize:Vector2) -> float:
 func _unhandled_key_input(event: InputEvent) -> void:
 	var keyevent := event as InputEventKey
 	if keyevent.pressed:
-		if OS.has_feature("editor") and keyevent.get_modifiers_mask() & (
+		if Dreamer.debug_mode and keyevent.get_modifiers_mask() & (
 		KeyModifierMask.KEY_MASK_META
 		):
 			match keyevent.keycode:

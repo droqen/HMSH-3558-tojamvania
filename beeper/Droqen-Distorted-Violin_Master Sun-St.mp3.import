@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8taffmxh7t2m"
+path="res://.godot/imported/Droqen-Distorted-Violin_Master Sun-St.mp3-eb3b71648b751db66f4eaf3a9b4e84b5.mp3str"
+
+[deps]
+
+source_file="res://beeper/Droqen-Distorted-Violin_Master Sun-St.mp3"
+dest_files=["res://.godot/imported/Droqen-Distorted-Violin_Master Sun-St.mp3-eb3b71648b751db66f4eaf3a9b4e84b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

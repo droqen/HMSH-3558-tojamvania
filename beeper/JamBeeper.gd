@@ -2,11 +2,15 @@ extends Node
 
 const CustomLoopPlayer = preload("res://beeper/custom_loop_player.gd")
 
-func _ready() -> void:
+func reset_all_bgms() -> void:
 	for sound in get_children():
 		if sound is CustomLoopPlayer:
+			sound.pitch_scale = 1.0
 			sound.volume_db = -80
-			sound.play()
+			sound.play(0)
+
+func _ready() -> void:
+	reset_all_bgms()
 
 func plerp(bgmvols:Dictionary, rate:float=0.1) -> void:
 	for sound in get_children():

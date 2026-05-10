@@ -8,7 +8,7 @@ var p : float = 0.00
 @export var rotation_rate : float = 0.01
 
 func _ready() -> void:
-	s = starting_scale
+	s = starting_scale + 1
 	_physics_process(0)
 
 func _physics_process(_delta: float) -> void:

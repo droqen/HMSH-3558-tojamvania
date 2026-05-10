@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://1c5o3x5ory3s" path="res://dreams/2009-scale/tinyplacer.gd" id="4_gy5oj"]
 [ext_resource type="Texture2D" uid="uid://cmtee0uyirhi6" path="res://dreams/2009-scale/vista.pyxel" id="5_dctt7"]
 [ext_resource type="Script" uid="uid://bj1ojyq5dphgn" path="res://navdi/navdisheetregionsprite.gd" id="6_mmks6"]
+[ext_resource type="Script" uid="uid://0757lmr2yjk0" path="res://dreams/2009-scale/tutorial.gd" id="7_rchku"]
 [ext_resource type="Script" uid="uid://tt1ag5ksilr0" path="res://navdi/navdibodymover.gd" id="8_7rh0o"]
 [ext_resource type="LabelSettings" uid="uid://c7ujvkr31w54l" path="res://fonts/label88mono.tres" id="10_dctt7"]
 [ext_resource type="LabelSettings" uid="uid://binod60l8i2ni" path="res://fonts/label44mono.tres" id="11_mmks6"]
@@ -34,14 +35,27 @@ script = ExtResource("2_kb54a")
 
 [node name="View2" parent="." unique_id=1713809483 instance=ExtResource("3_gy5oj")]
 
-[node name="Label" type="Label" parent="." unique_id=398089902]
+[node name="eytppi" type="Label" parent="." unique_id=398089902]
+visible = false
+modulate = Color(0.27450982, 0.30980393, 0.3019608, 1)
+offset_right = 110.0
+offset_bottom = 23.0
+text = "Every year
+the placer
+ places, i"
+label_settings = ExtResource("10_dctt7")
+
+[node name="pi_title_wht" type="Label" parent="." unique_id=841074528]
 visible = false
 offset_right = 110.0
 offset_bottom = 23.0
-text = "2009: Scale"
+text = "
+
+ places, i"
 label_settings = ExtResource("10_dctt7")
 
-[node name="Label2" type="Label" parent="." unique_id=326146165]
+[node name="credits" type="Label" parent="." unique_id=326146165]
+visible = false
 modulate = Color(0.27470893, 0.31096, 0.3024426, 1)
 offset_left = 155.0
 offset_right = 375.0
@@ -61,7 +75,8 @@ in collaboration with
     and John Fitzwilliam Goat"
 label_settings = ExtResource("11_mmks6")
 
-[node name="Label4" type="Label" parent="." unique_id=714429609]
+[node name="credits_wht" type="Label" parent="." unique_id=714429609]
+visible = false
 offset_left = 155.0
 offset_right = 375.0
 offset_bottom = 65.0
@@ -77,7 +92,7 @@ text = "
     skbbyc"
 label_settings = ExtResource("11_mmks6")
 
-[node name="Label3" type="Label" parent="." unique_id=384555339]
+[node name="tutorial" type="Label" parent="." unique_id=384555339]
 visible = false
 offset_right = 220.0
 offset_bottom = 75.0
@@ -96,6 +111,7 @@ text = "
 
             [HOLD RIGHT]"
 label_settings = ExtResource("11_mmks6")
+script = ExtResource("7_rchku")
 
 [node name="tiny" type="Node2D" parent="." unique_id=771099010]
 z_index = 1

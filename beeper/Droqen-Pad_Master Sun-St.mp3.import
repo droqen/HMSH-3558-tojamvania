@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dusfvw8fsbww8"
+path="res://.godot/imported/Droqen-Pad_Master Sun-St.mp3-5765996ece530bf230ef83175710f8f8.mp3str"
+
+[deps]
+
+source_file="res://beeper/Droqen-Pad_Master Sun-St.mp3"
+dest_files=["res://.godot/imported/Droqen-Pad_Master Sun-St.mp3-5765996ece530bf230ef83175710f8f8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

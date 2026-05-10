@@ -4,9 +4,15 @@
 [ext_resource type="LabelSettings" uid="uid://binod60l8i2ni" path="res://fonts/label44mono.tres" id="1_owej1"]
 [ext_resource type="PackedScene" uid="uid://b3k3ryrbbmfka" path="res://dreams/2022-shouldnt-be/default-view.tscn" id="2_kgmwy"]
 [ext_resource type="Script" uid="uid://c8r0rraf7yqst" path="res://navdi/navdisoleplayer.gd" id="4_uaaf7"]
+[ext_resource type="LabelSettings" uid="uid://c7ujvkr31w54l" path="res://fonts/label88mono.tres" id="5_i2top"]
 
 [node name="2023LeaveScene" type="Node2D" unique_id=970889184]
 script = ExtResource("1_kgmwy")
+
+[node name="black_bg" type="ColorRect" parent="." unique_id=940321771]
+offset_right = 300.0
+offset_bottom = 160.0
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=469862930]
 modulate = Color(0.3019608, 0.3019608, 0.3019608, 1)
@@ -88,3 +94,45 @@ offset_bottom = 30.0
 [node name="nullplayer" type="Node2D" parent="." unique_id=1548008830]
 script = ExtResource("4_uaaf7")
 metadata/_custom_type_script = "uid://c8r0rraf7yqst"
+
+[node name="eytppi" type="Label" parent="." unique_id=1576951923]
+modulate = Color(0.27450982, 0.30980393, 0.3019608, 1)
+offset_right = 110.0
+offset_bottom = 23.0
+text = "Every year   
+the placer
+ places,"
+label_settings = ExtResource("5_i2top")
+
+[node name="pi_title_wht" type="Label" parent="." unique_id=791203024]
+offset_right = 110.0
+offset_bottom = 23.0
+text = "
+
+ places, i"
+label_settings = ExtResource("5_i2top")
+
+[node name="credits" type="Label" parent="." unique_id=390401302]
+visible = false
+modulate = Color(0.27470893, 0.31096, 0.3024426, 1)
+offset_left = 5.0
+offset_top = 149.0
+offset_right = 275.0
+offset_bottom = 214.0
+text = "* remi music - skbbyc library tileset - droqen game etc. *"
+label_settings = ExtResource("1_owej1")
+
+[node name="ColorRect" type="ColorRect" parent="credits" unique_id=531456717]
+layout_mode = 0
+offset_right = 290.0
+offset_bottom = 5.0
+color = Color(0.27450982, 0.30980393, 0.3019608, 1)
+
+[node name="credits_wht" type="Label" parent="." unique_id=794333847]
+visible = false
+offset_left = 5.0
+offset_top = 149.0
+offset_right = 275.0
+offset_bottom = 214.0
+text = "  remi         skbbyc                   droqen           "
+label_settings = ExtResource("1_owej1")

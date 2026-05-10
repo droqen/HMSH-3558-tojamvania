@@ -2,8 +2,13 @@ extends Node2D
 
 var prog := 0
 var play := 0
+var etype := 0
+var tshow := 0
 
 func _ready() -> void:
+	Beeper.reset_all_bgms()
+	$eytppi.visible_characters = 0
+	$pi_title_wht.hide()
 	if Dreamer.r("started_previously"):
 		pass
 	else:
@@ -12,7 +17,29 @@ func _ready() -> void:
 		$slab3.text = ($slab3.text as String).replace("PLAY AGAIN?", "PRESS START")
 
 func _physics_process(_delta: float) -> void:
-	Beeper.plerp({},0.01)
+	if $eytppi.visible_characters < $eytppi.get_total_character_count():
+		if etype < 3:
+			etype += 1
+		else:
+			match $eytppi.text[$eytppi.visible_characters]:
+				' ', '\n':
+					pass
+				_:
+					Beeper.get_sfx("type").play()
+			$eytppi.visible_characters += 1
+			etype = 0
+	elif tshow < 20:
+		tshow += 1
+		Beeper.get_sfx("type").play()
+	elif tshow < 40:
+		tshow += 1
+		$pi_title_wht.visible = randf() < 0.8
+	else:
+		$pi_title_wht.show()
+	
+	Beeper.plerp({
+		
+	},0.01)
 	prog += 1
 	match prog:
 		060: $slab1.show()
@@ -21,6 +48,11 @@ func _physics_process(_delta: float) -> void:
 		123: $slab2/ColorRect.hide()
 		180: $slab3.show()
 		183: $slab3/ColorRect.hide()
+		240: $credits.show()
+		243: $credits/ColorRect.hide()
+	if prog >= 320:
+		if prog < 340: $credits_wht.visible = randf() < 0.8
+		else: $credits_wht.show()
 	if prog >= 180:
 		if Pin.get_action_hit(): play = 1
 		if play:
