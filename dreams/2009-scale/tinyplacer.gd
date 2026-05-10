@@ -48,6 +48,8 @@ func _physics_process(_delta: float) -> void:
 	vx /= TINYSCALE
 	vy /= TINYSCALE
 	
+	position.x = clamp(position.x, -1, 299.5)
+	
 	if bufs.has(LANDEDGREYBUF):
 		spr.setup([11],0)
 		#vx = 0; vy = 0;

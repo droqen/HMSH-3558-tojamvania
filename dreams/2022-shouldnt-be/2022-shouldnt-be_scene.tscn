@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://b5kbhejkcqi33" path="res://dreams/2019-there-was-none/2019-there-was-none_Dream.tres" id="4_ret7v"]
 [ext_resource type="PackedScene" uid="uid://dplvfribmtbwc" path="res://dreams/2022-shouldnt-be/placer.tscn" id="4_v56kj"]
 [ext_resource type="Texture2D" uid="uid://gb7ahuwosw04" path="res://dreams/2022-shouldnt-be/not-here.pyxel" id="5_ret7v"]
+[ext_resource type="LabelSettings" uid="uid://c7ujvkr31w54l" path="res://fonts/label88mono.tres" id="7_x2d6g"]
 [ext_resource type="Script" uid="uid://cmcadvi8j44y0" path="res://navdi/navdivessel.gd" id="9_x2d6g"]
 [ext_resource type="Script" uid="uid://deofnmer27xio" path="res://dreams/2019-there-was-none/exit.gd" id="13_bkbmr"]
 
@@ -43,6 +44,19 @@ script = ExtResource("2_v56kj")
 [node name="placer" parent="game/stage" unique_id=898140446 instance=ExtResource("4_v56kj")]
 position = Vector2(15, 5)
 
+[node name="speakingLine" type="Label" parent="game/stage" unique_id=398493196]
+offset_left = 151.0
+offset_top = 121.0
+offset_right = 191.0
+offset_bottom = 144.0
+text = "aef, attendant.
+i lain to feal-
+threncelet, bee
+and aefcrester."
+label_settings = ExtResource("7_x2d6g")
+visible_characters = 0
+visible_ratio = 0.0
+
 [node name="v" type="Node2D" parent="game" unique_id=2029593319]
 script = ExtResource("9_x2d6g")
 vessel_room_size = Vector2i(150, 160)
@@ -64,6 +78,19 @@ frame = 24
 script = ExtResource("3_alh1m")
 sheet = ExtResource("4_o5566")
 frames = PackedInt32Array(24, 34)
+ani_period = 30
+metadata/_custom_type_script = "uid://di2t14yakk4ot"
+
+[node name="lit_placer" type="Sprite2D" parent="game/v" unique_id=121650237]
+visible = false
+position = Vector2(425, 145)
+texture = ExtResource("5_ret7v")
+hframes = 10
+vframes = 10
+frame = 23
+script = ExtResource("3_alh1m")
+sheet = ExtResource("4_o5566")
+frames = PackedInt32Array(23, 33)
 ani_period = 30
 metadata/_custom_type_script = "uid://di2t14yakk4ot"
 

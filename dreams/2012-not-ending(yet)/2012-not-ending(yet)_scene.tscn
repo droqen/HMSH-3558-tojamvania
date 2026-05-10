@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cmcadvi8j44y0" path="res://navdi/navdivessel.gd" id="6_hmdn8"]
 [ext_resource type="PackedScene" uid="uid://b3k3ryrbbmfka" path="res://dreams/2022-shouldnt-be/default-view.tscn" id="6_l8is2"]
 [ext_resource type="LabelSettings" uid="uid://c7ujvkr31w54l" path="res://fonts/label88mono.tres" id="7_l8is2"]
+[ext_resource type="Script" uid="uid://cpisdge0p8fso" path="res://dreams/2012-not-ending(yet)/flickering.gd" id="7_sls1o"]
 [ext_resource type="Script" uid="uid://deofnmer27xio" path="res://dreams/2019-there-was-none/exit.gd" id="8_71x05"]
 [ext_resource type="Script" uid="uid://bbipm02ofwkc7" path="res://dreams/2012-not-ending(yet)/2012_beep.gd" id="9_5wxgb"]
 [ext_resource type="Resource" uid="uid://b2bk3bn2a2xdq" path="res://dreams/2025-the-more-u-have/2025-the-more-u-have_Dream.tres" id="9_c4xjv"]
@@ -50,6 +51,7 @@ script = ExtResource("2_hmdn8")
 
 [node name="LabelCtr" type="Node2D" parent="v" unique_id=1354696289]
 position = Vector2(76, -84)
+script = ExtResource("7_sls1o")
 
 [node name="Label" type="Label" parent="v/LabelCtr" unique_id=1369473259]
 offset_left = -65.0
@@ -64,7 +66,9 @@ gggbhrobpnvtr
 urrlur. urrli
 lurbumlur. br
 lurbit. yyyyu
-yuj q geblll."
+yuj q geblll.
+
+   -Placer"
 label_settings = ExtResource("7_l8is2")
 
 [node name="Exit2026" type="Marker2D" parent="v" unique_id=218549060]

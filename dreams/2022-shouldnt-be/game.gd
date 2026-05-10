@@ -28,6 +28,38 @@ func _physics_process(_delta: float) -> void:
 			p.position.x -= traveldir.x * (roomrect_pixels.size.x - 4)
 			p.position.y -= traveldir.y * (roomrect_pixels.size.y - 4)
 			loadroom()
+		
+		var lit_placer = $stage/exiles.get_node_or_null("lit_placer")
+		if lit_placer:
+			var r : float = 40
+			var tofull : int = (
+				$stage/speakingLine
+				.get_total_character_count()
+				- $stage/speakingLine
+				  .visible_characters
+			)
+			if $stage/speakingLine.visible_characters:
+				r = 80
+			if p.position.distance_squared_to(lit_placer.position) < r*r:
+				$stage/speakingLine.show()
+				if tofull > 0:
+					lit_placer.visible = randf() < 0.5
+					if randf() < 0.1:
+						$stage/speakingLine.visible_characters += randi_range(
+							1,
+							mini(tofull,4)
+						)
+				else:
+					lit_placer.show()
+			else:
+				lit_placer.hide()
+				if $stage/speakingLine.visible_characters > 0:
+					$stage/speakingLine.visible_characters -= 1
+		else:
+			#lit_placer.hide()
+			if $stage/speakingLine.visible_characters > 0:
+				$stage/speakingLine.visible_characters -= 1
+		
 func loadroom() -> void:
 	stage_maze.copy_from(
 		vessel.get_maze(),
