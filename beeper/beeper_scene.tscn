@@ -2,14 +2,21 @@
 
 [ext_resource type="Script" uid="uid://v46msmleojrr" path="res://beeper/JamBeeper.gd" id="1_vcynw"]
 [ext_resource type="AudioStream" uid="uid://vpkr5xgatqq5" path="res://beeper/Droqen-Drums-1.mp3" id="2_epntd"]
-[ext_resource type="AudioStream" uid="uid://bk42ik6svcupj" path="res://beeper/Droqen-1st-melody-1.mp3" id="3_v2oqi"]
+[ext_resource type="AudioStream" uid="uid://bwh4dnjgd2dnl" path="res://beeper/Droqen-1st-melody-no-drums_Master-St.mp3" id="4_antat"]
 [ext_resource type="AudioStream" uid="uid://tg88h388ybf3" path="res://beeper/Droqen-Sun-1.mp3" id="4_om6po"]
-[ext_resource type="AudioStream" uid="uid://bnmb8e3f4jrlf" path="res://beeper/Droqen-2nd-melody-1.mp3" id="4_y1r7b"]
+[ext_resource type="AudioStream" uid="uid://bi714cmohq1lw" path="res://beeper/Droqen-2nd-melody-no-drums_Master-St.mp3" id="5_8e160"]
 [ext_resource type="AudioStream" uid="uid://2uofggvegtr1" path="res://beeper/high_pitch.mp3" id="5_w3rm4"]
 [ext_resource type="Script" uid="uid://b42f75o2mfntd" path="res://beeper/custom_loop_player.gd" id="6_2ipsu"]
 [ext_resource type="AudioStream" uid="uid://bpcdm5alnrni7" path="res://beeper/Droqen-3rd-theme_Master-St_1.mp3" id="8_oy7qt"]
 [ext_resource type="AudioStream" uid="uid://bf6e77o31424f" path="res://beeper/536763__egomassive__glass.ogg" id="9_4bnn0"]
 [ext_resource type="AudioStream" uid="uid://dfdxyehapx4jm" path="res://beeper/764765__tean_brits29__glass-breaking.ogg" id="10_11ows"]
+[ext_resource type="AudioStream" uid="uid://djecrml81h1n0" path="res://beeper/step.mp3" id="11_t4fsl"]
+[ext_resource type="AudioStream" uid="uid://tb4fwpmf3rwl" path="res://beeper/stepdeepland.mp3" id="12_dmac0"]
+[ext_resource type="AudioStream" uid="uid://g3mxvylbpmr1" path="res://beeper/jump1.mp3" id="13_iwk7p"]
+[ext_resource type="AudioStream" uid="uid://cwcp00542o1c3" path="res://beeper/jump2_flap.mp3" id="14_8v8bj"]
+[ext_resource type="AudioStream" uid="uid://x5vdano5mqex" path="res://beeper/flap3.mp3" id="15_vxajl"]
+[ext_resource type="AudioStream" uid="uid://b57vos4e7yyl8" path="res://beeper/clicktyp.mp3" id="16_7scr0"]
+[ext_resource type="AudioStream" uid="uid://bdlh5rtd61x0l" path="res://beeper/bksp.mp3" id="17_antat"]
 
 [node name="BeeperScene" type="Node2D" unique_id=250030564]
 script = ExtResource("1_vcynw")
@@ -21,13 +28,13 @@ custom_loop_start_late = 0.027
 custom_loop_end_reduce = 0.046
 
 [node name="melody1" type="AudioStreamPlayer" parent="." unique_id=1953126615]
-stream = ExtResource("3_v2oqi")
+stream = ExtResource("4_antat")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 0.027
 custom_loop_end_reduce = 0.046
 
 [node name="melody2" type="AudioStreamPlayer" parent="." unique_id=859582237]
-stream = ExtResource("4_y1r7b")
+stream = ExtResource("5_8e160")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 0.027
 custom_loop_end_reduce = 0.046
@@ -50,7 +57,50 @@ custom_loop_end_reduce = 0.046
 
 [node name="break" type="AudioStreamPlayer" parent="." unique_id=364884055]
 stream = ExtResource("9_4bnn0")
+volume_db = -9.0
 pitch_scale = 0.5
 
 [node name="break2" type="AudioStreamPlayer" parent="." unique_id=474474011]
 stream = ExtResource("10_11ows")
+volume_db = -5.0
+
+[node name="step" type="AudioStreamPlayer" parent="." unique_id=1847836710]
+stream = ExtResource("11_t4fsl")
+volume_db = -5.0
+pitch_scale = 2.0
+
+[node name="stepdeep" type="AudioStreamPlayer" parent="." unique_id=537163793]
+stream = ExtResource("12_dmac0")
+pitch_scale = 0.25
+
+[node name="jump1" type="AudioStreamPlayer" parent="." unique_id=980127499]
+stream = ExtResource("13_iwk7p")
+volume_db = -8.0
+
+[node name="jump1_quiet" type="AudioStreamPlayer" parent="." unique_id=160913311]
+stream = ExtResource("13_iwk7p")
+volume_db = -18.0
+
+[node name="jump2" type="AudioStreamPlayer" parent="." unique_id=898606325]
+stream = ExtResource("14_8v8bj")
+volume_db = -6.0
+
+[node name="jump2_quiet" type="AudioStreamPlayer" parent="." unique_id=938547392]
+stream = ExtResource("14_8v8bj")
+volume_db = -16.0
+
+[node name="jump3" type="AudioStreamPlayer" parent="." unique_id=449211666]
+stream = ExtResource("15_vxajl")
+volume_db = -4.0
+
+[node name="jump3_quiet" type="AudioStreamPlayer" parent="." unique_id=1971067072]
+stream = ExtResource("15_vxajl")
+volume_db = -14.0
+
+[node name="type" type="AudioStreamPlayer" parent="." unique_id=684296512]
+stream = ExtResource("16_7scr0")
+volume_db = -4.0
+
+[node name="bksp" type="AudioStreamPlayer" parent="." unique_id=1521715246]
+stream = ExtResource("17_antat")
+volume_db = -4.0

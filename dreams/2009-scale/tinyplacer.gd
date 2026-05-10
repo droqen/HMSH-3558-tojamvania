@@ -67,12 +67,15 @@ func _physics_process(_delta: float) -> void:
 		spr.setup([11 if sneaking else 10],0)
 	if bufs.try_eat([FLORBUF,JUMPBUF]):
 		vy = -0.9
+		Beeper.get_sfx("jump1_quiet").play()
 	elif airjumps > 0 and bufs.try_eat([JUMPBUF]):
 		airjumps -= 1
 		match airjumps:
 			0:
+				Beeper.get_sfx("jump3_quiet").play()
 				if vy < 0:
 					vx += facedir * abs(vy)
 				vy = -.6
 			1:
+				Beeper.get_sfx("jump2_quiet").play()
 				vy = vy*.33 - 1.1

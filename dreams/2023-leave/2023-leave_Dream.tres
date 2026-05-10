@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NavdiDream" format=3 uid="uid://baor2w2a7sf0v"]
+
+[ext_resource type="Script" uid="uid://dmknyp6uhnvkf" path="res://navdi/navdidream.gd" id="1_iq3qg"]
+[ext_resource type="PackedScene" uid="uid://bnyp3daobam4f" path="res://dreams/2023-leave/2023-leave_Scene.tscn" id="1_uhfop"]
+
+[resource]
+script = ExtResource("1_iq3qg")
+packed_scene = ExtResource("1_uhfop")
+metadata/_custom_type_script = "uid://dmknyp6uhnvkf"

@@ -14,6 +14,6 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	p += 0.1
 	s += scale_rate
-	if s < 0: hide()
+	if s < 0: hide(); scale = Vector2(0,0)
 	else: show(); scale = Vector2(s,s) * (1+pulse_power*sin(p))
 	rotation += rotation_rate

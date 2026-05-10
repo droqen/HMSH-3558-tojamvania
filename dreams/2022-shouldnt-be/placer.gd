@@ -13,6 +13,13 @@ func _ready() -> void:
 		LANDEDGREYBUF,15,
 		FREEZEBUF,5,
 	])
+	spr.frame_changed.connect(func():
+		match [len(spr.frames),spr.frame]:
+			[4,37],[4,39]:
+				stepsound()
+			[4,17],[4,19]:
+				stepsound()
+	)
 
 func _physics_process(_delta: float) -> void:
 	show()
@@ -21,7 +28,9 @@ func _physics_process(_delta: float) -> void:
 	var dpad := Pin.get_dpad()
 	var onflor := is_on_floor()
 	if onflor:
-		if airjumps <= 0 and not sneaking: bufs.setmin(LANDEDGREYBUF, 15)
+		if airjumps <= 0 and not sneaking:
+			bufs.setmin(LANDEDGREYBUF, 15)
+			Beeper.get_sfx("stepdeep").play()
 		airjumps = 2
 		sneaking = dpad.y > 0
 		if sneaking: airjumps = 0
@@ -73,14 +82,17 @@ func _physics_process(_delta: float) -> void:
 		spr.setup([35 if sneaking else 15],0)
 	if bufs.try_eat([FLORBUF,JUMPBUF]):
 		vy = -0.9
+		Beeper.get_sfx("jump1").play()
 	elif airjumps > 0 and bufs.try_eat([JUMPBUF]):
 		airjumps -= 1
 		match airjumps:
 			0:
+				Beeper.get_sfx("jump3").play()
 				if vy < 0:
 					vx += facedir * abs(vy)
 				vy = -.6
 			1:
+				Beeper.get_sfx("jump2").play()
 				vy = vy*.33 - 1.1
 
 func is_on_floor() -> bool:
@@ -91,9 +103,22 @@ func is_on_floor() -> bool:
 			if cast_to_floor >= .25:
 				position.y += cast_to_floor
 			on_floor = true
-			if not bufs.has(FLORBUF) and not bufs.has(NOLANDBUF): bufs.on(LANDBUF)
+			if not bufs.has(FLORBUF) and not bufs.has(NOLANDBUF):
+				bufs.on(LANDBUF)
+				landsound()
 			bufs.on(FLORBUF)
 	return on_floor
+
+func stepsound() -> void:
+	var stepsfx := Beeper.get_sfx("step");
+	stepsfx.volume_db = -15
+	stepsfx.pitch_scale = randf_range(1.6,1.8)
+	stepsfx.play()
+func landsound() -> void:
+	var stepsfx := Beeper.get_sfx("step");
+	stepsfx.volume_db = -5
+	stepsfx.pitch_scale = randf_range(0.5,0.8)
+	stepsfx.play()
 
 func apply_velocities() -> void:
 	if vy<0 and!mover.try_slip_move(self,solidcast,VERTICAL,vy,sign(vx)):

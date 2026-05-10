@@ -8,7 +8,7 @@ var reverse_period : float = 0.0
 
 func _physics_process(_delta: float) -> void:
 	Beeper.plerp({
-		"library":0
+		"library":-15
 	})
 func _process(delta: float) -> void:
 	if reverse:
