@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="not-a-vania(HMSH)"
+config/name="3558HMSH"
 run/main_scene="uid://b5y5u30rccpf6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://veo7latmdhug"
