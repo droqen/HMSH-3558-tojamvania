@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://cbbtf7quvr04j"]
 
 [ext_resource type="Script" uid="uid://v46msmleojrr" path="res://beeper/JamBeeper.gd" id="1_vcynw"]
-[ext_resource type="AudioStream" uid="uid://vpkr5xgatqq5" path="res://beeper/Droqen-Drums-1.mp3" id="2_epntd"]
-[ext_resource type="AudioStream" uid="uid://bwh4dnjgd2dnl" path="res://beeper/Droqen-1st-melody-no-drums_Master-St.mp3" id="4_antat"]
-[ext_resource type="AudioStream" uid="uid://bi714cmohq1lw" path="res://beeper/Droqen-2nd-melody-no-drums_Master-St.mp3" id="5_8e160"]
+[ext_resource type="AudioStream" uid="uid://ctsmvbiyle4n6" path="res://beeper/drums-niceloop.ogg" id="2_cxq1c"]
+[ext_resource type="AudioStream" uid="uid://dxylyrexhpbom" path="res://beeper/melody1-niceloop.ogg" id="4_a8qfj"]
+[ext_resource type="AudioStream" uid="uid://c3ikayl3p4vlj" path="res://beeper/melody2-no-drums-niceloop14992.ogg" id="5_3bdqq"]
 [ext_resource type="AudioStream" uid="uid://2uofggvegtr1" path="res://beeper/high_pitch.mp3" id="5_w3rm4"]
 [ext_resource type="Script" uid="uid://b42f75o2mfntd" path="res://beeper/custom_loop_player.gd" id="6_2ipsu"]
-[ext_resource type="AudioStream" uid="uid://bpcdm5alnrni7" path="res://beeper/Droqen-3rd-theme_Master-St_1.mp3" id="8_oy7qt"]
+[ext_resource type="AudioStream" uid="uid://rkt8ofhf4cke" path="res://beeper/library-niceloop.ogg" id="7_cxq1c"]
+[ext_resource type="AudioStream" uid="uid://d3d825kvb3i3h" path="res://beeper/sunbass.ogg" id="8_a8qfj"]
+[ext_resource type="AudioStream" uid="uid://qd0xm5kpydll" path="res://beeper/sunpaad.ogg" id="9_3bdqq"]
 [ext_resource type="AudioStream" uid="uid://bf6e77o31424f" path="res://beeper/536763__egomassive__glass.ogg" id="9_4bnn0"]
-[ext_resource type="AudioStream" uid="uid://cigsyvqx547cx" path="res://beeper/Droqen-Bass_Master Sun-St_1.mp3" id="9_cxq1c"]
 [ext_resource type="AudioStream" uid="uid://dfdxyehapx4jm" path="res://beeper/764765__tean_brits29__glass-breaking.ogg" id="10_11ows"]
-[ext_resource type="AudioStream" uid="uid://dusfvw8fsbww8" path="res://beeper/Droqen-Pad_Master Sun-St.mp3" id="10_a8qfj"]
-[ext_resource type="AudioStream" uid="uid://d28uq3dlyoe73" path="res://beeper/Droqen-Synth_Master Sun-St.mp3" id="11_3bdqq"]
+[ext_resource type="AudioStream" uid="uid://cd7wll8774tjx" path="res://beeper/sunsnth.ogg" id="10_1050u"]
+[ext_resource type="AudioStream" uid="uid://cq1qf68uspxwf" path="res://beeper/sunviol.ogg" id="11_ktjft"]
 [ext_resource type="AudioStream" uid="uid://djecrml81h1n0" path="res://beeper/step.mp3" id="11_t4fsl"]
-[ext_resource type="AudioStream" uid="uid://c8taffmxh7t2m" path="res://beeper/Droqen-Distorted-Violin_Master Sun-St.mp3" id="12_1050u"]
 [ext_resource type="AudioStream" uid="uid://tb4fwpmf3rwl" path="res://beeper/stepdeepland.mp3" id="12_dmac0"]
 [ext_resource type="AudioStream" uid="uid://g3mxvylbpmr1" path="res://beeper/jump1.mp3" id="13_iwk7p"]
 [ext_resource type="AudioStream" uid="uid://cwcp00542o1c3" path="res://beeper/jump2_flap.mp3" id="14_8v8bj"]
@@ -26,19 +26,19 @@
 script = ExtResource("1_vcynw")
 
 [node name="drums" type="AudioStreamPlayer" parent="." unique_id=2061925558]
-stream = ExtResource("2_epntd")
+stream = ExtResource("2_cxq1c")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 0.027
 custom_loop_end_reduce = 0.046
 
 [node name="melody1" type="AudioStreamPlayer" parent="." unique_id=1953126615]
-stream = ExtResource("4_antat")
+stream = ExtResource("4_a8qfj")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 0.027
 custom_loop_end_reduce = 0.046
 
 [node name="melody2" type="AudioStreamPlayer" parent="." unique_id=859582237]
-stream = ExtResource("5_8e160")
+stream = ExtResource("5_3bdqq")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 0.027
 custom_loop_end_reduce = 0.046
@@ -46,33 +46,34 @@ custom_loop_end_reduce = 0.046
 [node name="pitch" type="AudioStreamPlayer" parent="." unique_id=1922215176]
 stream = ExtResource("5_w3rm4")
 script = ExtResource("6_2ipsu")
+custom_loop_enabled = true
 
 [node name="library" type="AudioStreamPlayer" parent="." unique_id=758628342]
-stream = ExtResource("8_oy7qt")
+stream = ExtResource("7_cxq1c")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 0.027
 custom_loop_end_reduce = 0.046
 
 [node name="sunnyB" type="AudioStreamPlayer" parent="." unique_id=154296257]
-stream = ExtResource("9_cxq1c")
+stream = ExtResource("8_a8qfj")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 1.0
 custom_loop_end_reduce = 8.0
 
 [node name="sunnyP" type="AudioStreamPlayer" parent="." unique_id=628007478]
-stream = ExtResource("10_a8qfj")
+stream = ExtResource("9_3bdqq")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 1.0
 custom_loop_end_reduce = 8.0
 
 [node name="sunnyS" type="AudioStreamPlayer" parent="." unique_id=2013685786]
-stream = ExtResource("11_3bdqq")
+stream = ExtResource("10_1050u")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 1.0
 custom_loop_end_reduce = 8.0
 
 [node name="sunnyV" type="AudioStreamPlayer" parent="." unique_id=616762964]
-stream = ExtResource("12_1050u")
+stream = ExtResource("11_ktjft")
 script = ExtResource("6_2ipsu")
 custom_loop_start_late = 1.0
 custom_loop_end_reduce = 8.0

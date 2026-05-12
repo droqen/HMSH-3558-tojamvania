@@ -1,7 +1,7 @@
 extends Node
 
 func _ready() -> void:
-	if OS.has_feature("editor"):
+	if OS.has_feature("editor") and true:
 		Dreamer.debug_mode = true
 		Dreamer.dream(load("res://dreams/06-brightgreenmenu/06-brightgreenmenu_Dream.tres"))
 	else:

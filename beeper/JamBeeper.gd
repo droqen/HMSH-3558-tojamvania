@@ -12,6 +12,11 @@ func reset_all_bgms() -> void:
 func _ready() -> void:
 	reset_all_bgms()
 
+var time_since_last_mix : float = AudioServer.get_time_since_last_mix()
+
+func _physics_process(_delta: float) -> void:
+	time_since_last_mix = AudioServer.get_time_since_last_mix()
+
 func plerp(bgmvols:Dictionary, rate:float=0.1) -> void:
 	for sound in get_children():
 		if sound is CustomLoopPlayer:
